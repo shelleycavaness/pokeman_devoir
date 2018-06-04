@@ -1,0 +1,14 @@
+extends layout.pug
+block content 
+    h1 quel pokemon? #{poke}
+    div     
+        form(action="/pokemon", method="post")
+            label  entrez un nom de pokemon
+                input(type="text", name="item" )
+            button(type="submit") submit
+
+    div Found #{data.pokemon_entries.length} pokemons
+        each pokemon in data.pokemon_entries
+            div
+                //- a(href='/pokemon/'+pokemon.pokemon_species.name)= pokemon.pokemon_species.name
+                a(href='/pokemon/'+pokemon.pokemon_species.name)= pokemon.pokemon_species.name

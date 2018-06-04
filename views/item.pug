@@ -1,0 +1,13 @@
+extends layout.pug
+block content
+    div
+        h2 son numero est le
+        p #{ data.id }
+        h2 nom:
+        p #{ data.name }
+        hr
+        h2 Flavors
+        each flavor in data.flavors
+            div
+                div name #{flavor.version.name}
+                div= flavor.flavor_text
